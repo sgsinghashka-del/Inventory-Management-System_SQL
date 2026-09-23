@@ -1,106 +1,210 @@
-📦 Inventory Order Management Database System
-📌 Project Overview
-This project is a relational database system that simulates real-world supply chain and inventory operations, managing suppliers, products, warehouses, orders, and shipments. It also represents a core ERP module, showcasing how supply chain processes are integrated within a centralized system for efficient operations and decision-making.
+# Inventory Management System (SQL)
 
-🎯 Objective
-To solve common supply chain problems such as:
+<p align="center">
+  <img src="Diagram.png" alt="Inventory Management System ER Diagram" width="1100" />
+</p>
 
-Stock shortages
-Overstocking
-Poor supplier tracking
-Inefficient order fulfillment
-🧱 Database Structure
-The database consists of the following tables:
+<div align="center">
+  <img alt="SQL" src="https://img.shields.io/badge/SQL-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img alt="Database" src="https://img.shields.io/badge/DBMS-Relational-0EA5E9?style=for-the-badge" />
+  <img alt="Analytics" src="https://img.shields.io/badge/Insights-Business%20Reporting-10B981?style=for-the-badge" />
+  <img alt="Supply Chain" src="https://img.shields.io/badge/Domain-Supply%20Chain-F59E0B?style=for-the-badge" />
+</div>
 
-Suppliers
-Products
-Warehouses
-Inventory
-PurchaseOrders
-PurchaseOrderItems
-SalesOrders
-SalesOrderItems
-Shipments
-🛠 Tools Used
-SQL (MySQL)
-MySQL Workbench
-Database Design (EER Diagram)
-🗂 Project Structure
-Supply-Chain-DBMS/
+A complete SQL-based inventory and supply chain management system designed to handle suppliers, products, warehouses, stock levels, purchase orders, sales orders, and shipment tracking. The project focuses on real-world inventory operations, stock monitoring, and business intelligence reporting.
 
-│ ├── README.md
+## Overview
 
-│ └── Project overview, features, and documentation
+This project simulates a practical inventory ecosystem for a retail or distribution business. It helps track stock movement, supplier performance, revenue trends, and delivery efficiency using structured SQL queries and database analysis.
 
-│ ├── database/
+The system is intended to answer business questions such as:
 
-│ ├── schema.sql
+- Which products are selling the most?
+- Which product categories generate the most revenue?
+- Which items are at risk of stockouts?
+- Which suppliers are performing well?
+- Are monthly sales improving or declining?
+- How effective is the delivery process?
 
-│ │ └── Database structure (CREATE DATABASE + TABLES) │ │ │ ├── data.sql
+## Why This Project Matters
 
-│ └── Sample data inserts for testing
+Efficient inventory management is critical for reducing waste, avoiding shortages, increasing profitability, and improving customer satisfaction. This database system provides an analytical foundation for operational decision-making in supply chain management.
 
-│ ├── queries/
+## Features
 
-│ ├── analysis.sql
+- Supplier and warehouse management
+- Product and inventory tracking
+- Purchase order and sales order processing
+- Shipment and delivery status monitoring
+- Low-stock and stock shortage detection
+- Supplier performance ranking
+- Monthly revenue analysis
+- Product category revenue reports
+- Business insights through SQL analytics
 
-│ └── SQL queries for business insights and reporting
+## Database Schema
 
-├── diagrams/
+The project includes the following core tables:
 
-│ ├── erd.png
+- Suppliers
+- Products
+- Warehouses
+- Inventory
+- PurchaseOrders
+- PurchaseOrderItems
+- SalesOrders
+- SalesOrderItems
+- Shipments
 
-│ └── Entity Relationship Diagram showing database structure
+## System Flow
 
-│ ├── screenshots/
+```mermaid
+flowchart LR
+    A[Suppliers] --> B[Purchase Orders]
+    B --> C[Inventory]
+    C --> D[Sales Orders]
+    D --> E[Shipments]
+    C --> F[Low Stock Alerts]
+    D --> G[Revenue Analytics]
+    B --> H[Supplier Performance]
+```
 
-│ ├── top_selling_products.png
+## Project Structure
 
-│ ├── revenue_by_category.png
+```text
+Inventory-Management-System_SQL/
+├── README.md
+├── Diagram.png
+├── Monthly revenue.png
+├── revenue by category.png
+├── top selling products.png
+├── low stock alert.png
+├── stock shortage detection.png
+├── supplier performance ranking.png
+├── delivery performance.png
+├── delivery success rate%.png
+├── queries.analysis.sql
+├── database/
+│   ├── schema.sql
+│   ├── data.sql
+│   └── ...
+└── ...
+```
 
-│ ├── low_stock.png
+## Key SQL Business Analysis
 
-│ ├── supplier_performance.png
+The project includes business-focused SQL queries for:
 
-│ ├── monthly_revenue.png
+- Top selling products
+- Revenue by category
+- Stock shortage detection
+- Low stock alerts
+- Supplier performance ranking
+- Monthly revenue trends
+- Delivery performance
+- Delivery success rate
 
-│ └── Query outputs and results visualized from SQL analysis
+## Screenshots
 
-📊 Key SQL Analysis
-🔹 Top Selling Products- identifies best-performing products based on total quantity sold.
+### Entity Relationship Diagram
 
-🔹 Revenue by Category- analyzes total revenue generated across different product categories.
+![ER Diagram](Diagram.png)
 
-🔹 Stock Shortage Detection- detects products with low inventory levels to prevent stockouts.
+### Top Selling Products
 
-🔹 Supplier Performance Ranking- evaluates supplier efficiency based on supply volume and order frequency.
+![Top Selling Products](top%20selling%20products.png)
 
-🔹 Monthly Revenue Trends- tracks revenue performance over time to identify growth patterns.
+### Revenue by Category
 
-🔹 Delivery Performance- measures delivery success rate and overall fulfillment efficiency.
+![Revenue by Category](revenue%20by%20category.png)
 
-🔹 Low Stock Alerts- flags items that require urgent restocking.
+### Monthly Revenue
 
-🖼 ERD Diagram
-EER diagram real png
-📸 Sample Query Outputs
-Top Selling Products top selling products
+![Monthly Revenue](Monthly%20revenue.png)
 
-Revenue by Category revenue by category
+### Stock Shortage Detection
 
-Low Stock Alert low stock alert
+![Stock Shortage Detection](stock%20shortage%20detection.png)
 
-🚀 Business Impact
-🔹 Strong revenue from the Kitchen category presents an opportunity to expand inventory and maximize sales
+### Low Stock Alerts
 
-🔹 Revenue growth in April indicates a positive trend that can be leveraged through scaling and targeted promotions
+![Low Stock Alerts](low%20stock%20alert.png)
 
-🔹 Low stock levels across several products increase the risk of lost sales and require timely restocking strategies
+### Supplier Performance Ranking
 
-🔹 Uneven supplier contributions highlight the need to strengthen high-performing supplier relationships and reassess underperforming ones
+![Supplier Performance Ranking](supplier%20performance%20ranking.png)
 
-🔹 Delivery delays reveal inefficiencies in logistics that impact customer experience and require operational improvement
+### Delivery Performance
 
-📌 Conclusion
-This project demonstrates how a structured database can effectively manage and analyze supply chain operations. By integrating inventory, sales, supplier, and shipment data, it provides insights into demand, revenue, stock levels, and operational efficiency. The analysis highlights opportunities in inventory optimization, supplier performance, and delivery efficiency. Overall, it showcases practical SQL skills in database design and real-world supply chain analysis.
+![Delivery Performance](delivery%20performance.png)
 
+### Delivery Success Rate
+
+![Delivery Success Rate](delivery%20success%20rate%25.png)
+
+## Business Insights
+
+The SQL analysis helps uncover actionable insights such as:
+
+- Strong revenue contribution from specific product categories
+- Seasonal or monthly revenue growth patterns
+- Items running low and needing quick restocking
+- Supplier dependence and supplier reliability
+- Delivery delays and performance issues affecting customer satisfaction
+
+## Setup Instructions
+
+### Prerequisites
+
+- MySQL or compatible SQL database
+- MySQL Workbench or any SQL client
+- Database files from the project
+
+### Steps
+
+1. Create the database schema from the SQL scripts in the `database/` folder.
+2. Insert sample data.
+3. Run the analysis queries from `queries.analysis.sql`.
+4. Explore the output reports and visualized insights.
+
+```sql
+-- Example query
+SELECT product_name, SUM(quantity) AS total_quantity_sold
+FROM SalesOrderItems soi
+JOIN Products p ON soi.product_id = p.product_id
+GROUP BY product_name
+ORDER BY total_quantity_sold DESC;
+```
+
+## Technologies Used
+
+- SQL
+- MySQL
+- MySQL Workbench
+- Database modeling and ERD design
+- Business analytics queries
+
+## Use Cases
+
+This project is suitable for:
+
+- Retail inventory management
+- Warehouse operations
+- Distribution planning
+- Supplier evaluation
+- Sales forecasting support
+- Operational analytics dashboards
+
+## Conclusion
+
+This Inventory Management System SQL project demonstrates how relational database design and SQL analysis can support real-world business decisions. It transforms operational sales, inventory, and logistics data into meaningful insights for improved planning and performance.
+
+## Author
+
+Ashka Singh
+
+---
+
+<p align="center">
+  <strong>Built for streamlined inventory operations and data-driven decision making.</strong>
+</p>
